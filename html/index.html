@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Loan Approval Estimator</title>
+</head>
+
+<body>
+    <div class="page">
+        <header class="primary-header">
+            <div>
+                <h1 class="fs-primary-heading text-primary-400 fw-bold">Loan Approval Estimator</h1>
+            </div>
+        </header>
+        <main>
+            <div class="even-columns">
+                <div>
+                    <form class="application-form" action="">
+                        <div>
+                            <p>Gender</p>
+                            <input type="radio" name="gender" id="male" required>
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender" id="female" required>
+                            <label for="female">Female</label>
+                        </div>
+                        <div>
+                            <p>Married</p>
+                            <input type="radio" name="married" id="married_yes" required>
+                            <label for="married_yes">Yes</label>
+                            <input type="radio" name="married" id="married_no" required>
+                            <label for="married_no">No</label>
+                        </div>
+                        <div>
+                            <label for="dependents">Number of dependents</label>
+                            <select name="dependents" id="dependents">
+                                <option value="" disabled selected hidden>Select number of dependents...</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3+">3+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p>Education level</p>
+                            <input type="radio" name="education" id="graduate" required>
+                            <label for="graduate">Graduate</label>
+                            <input type="radio" name="education" id="non-graduate" required required>
+                            <label for="non-graduate">Non Graduate</label>
+                        </div>
+                        <div>
+                            <p>Self Employed</p>
+                            <input type="radio" name="self-employed" id="self-employed_yes" required>
+                            <label for="self-employed_yes">Yes</label>
+                            <input type="radio" name="self-employed" id="self-employed_no" required>
+                            <label for="self-employed_no">No</label>
+                        </div>
+                        <div>
+                            <label for="applicant-income">Applicant Annual Income (thousands of $)</label>
+                            <input type="number" name="applicant-income" id="applicant-income" min="0" step="0.01"
+                                required>
+                        </div>
+                        <div>
+                            <label for="coapplicant-income">Coapplicant Annual Income (thousands of $)</label>
+                            <input type="number" name="coapplicant-income" id="coapplicant-income" min="0" step="0.01"
+                                required>
+                        </div>
+                        <div>
+                            <label for="loan-amount">Loan Amount (thousands of $)</label>
+                            <input type="number" name="loan-amount" id="loan-amount" step="0.01" required>
+                        </div>
+                        <div>
+                            <label for="loan-term">Loan Term (months)</label>
+                            <input type="number" name="loan-term" id="loan-term" min="0" step="1" required>
+                        </div>
+                        <div>
+                            <p>Credit History</p>
+                            <input type="radio" name="credit-history" id="credit-history_yes" required>
+                            <label for="credit-history_satisfactory">Satisfactory</label>
+                            <input type="radio" name="credit-history_unsatisfactory" id="credit-history_no" required>
+                            <label for="credit-history_no">Unsatisfactory</label>
+                        </div>
+                        <div>
+                            <p>Property Area</p>
+                            <input type="radio" name="property" id="urban" required>
+                            <label for="urban">Urban</label>
+                            <input type="radio" name="property" id="semiurban" required>
+                            <label for="semiurban">Semiurban</label>
+                            <input type="radio" name="property" id="rural" required>
+                            <label for="rural">Rural</label>
+                        </div>
+                        <input class="bg-primary-400" type="submit" value="Submit">
+                    </form>
+                </div>
+                <div>
+                    <p class="result | fs-secondary-heading fw-bold" style="color: var(--clr-accent-700);">
+                        Result:
+                        <span id="result-text">Not Accepted</span>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
