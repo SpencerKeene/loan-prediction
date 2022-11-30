@@ -35,6 +35,5 @@ def evaluate_route():
 
     return jsonify({'input': req_data, 'prediction': str(prediction)})
 
-   
 if __name__ == '__main__':
     app.run(port=7000)
