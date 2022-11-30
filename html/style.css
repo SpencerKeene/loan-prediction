@@ -270,6 +270,7 @@ input[type=submit] {
     margin-inline: auto;
     background-color: var(--clr-neutral-100);
     padding-inline: var(--size-600);
+    padding-bottom: var(--size-700);
 }
 
 .application-form>div {
