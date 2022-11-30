@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <script defer src="main.js"></script>
     <title>Loan Approval Estimator</title>
 </head>
 
@@ -79,10 +79,10 @@
                         </div>
                         <div>
                             <p>Credit History</p>
-                            <input type="radio" name="credit-history" id="credit-history_yes" required>
+                            <input type="radio" name="credit-history" id="credit-history_satisfactory" required>
                             <label for="credit-history_satisfactory">Satisfactory</label>
-                            <input type="radio" name="credit-history_unsatisfactory" id="credit-history_no" required>
-                            <label for="credit-history_no">Unsatisfactory</label>
+                            <input type="radio" name="credit-history" id="credit-history_unsatisfactory" required>
+                            <label for="credit-history_unsatisfactory">Unsatisfactory</label>
                         </div>
                         <div>
                             <p>Property Area</p>
@@ -99,7 +99,7 @@
                 <div>
                     <p class="result | fs-secondary-heading fw-bold" style="color: var(--clr-accent-700);">
                         Result:
-                        <span id="result-text">Not Accepted</span>
+                        <span class="result-text">Not Accepted</span>
                     </p>
                 </div>
             </div>
