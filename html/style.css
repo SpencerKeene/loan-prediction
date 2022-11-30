@@ -295,3 +295,32 @@ input[type=submit] {
         padding-inline: var(--size-800);
     }
 }
+
+.result {
+    display: block;
+}
+
+.loading-spinner {
+    display: none;
+    height: var(--fs-secondary-heading);
+    aspect-ratio: 1 / 1;
+
+    --border-size: var(--size-100);
+    --border-color: var(--clr-primary-400);
+
+    border: var(--border-size) solid transparent;
+    border-top: var(--border-size) solid var(--border-color);
+    border-right: var(--border-size) solid var(--border-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}

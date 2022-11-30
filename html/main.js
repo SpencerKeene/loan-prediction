@@ -1,5 +1,6 @@
 const applicationFormElement = document.getElementsByClassName('application-form')[0]
 const resultTextElement = document.getElementsByClassName('result-text')[0]
+const loadingSpinnerElement = document.getElementsByClassName('loading-spinner')[0]
 
 function getRadioValue(name) {
     const radioButtons = document.querySelectorAll(`input[name="${name}"]`);
@@ -35,7 +36,7 @@ function build_application() {
         selfEmployed: capitalize(matchAfterUnderscore(formData['self-employed'])),
         applicantIncome: parseFloat(formData['applicant-income']),
         coapplicantIncome: parseFloat(formData['coapplicant-income']),
-        loanAmount: parseFloat(formData['loan-amount']),
+        loanAmount: parseFloat(formData['loan-amount']) / 1000,
         loanTerm: parseInt(formData['loan-term']),
         creditHistory: formData['credit-history'] === 'credit-history_satisfactory' ? 1 : 0,
         propertyArea: capitalize(formData.property),
@@ -58,10 +59,16 @@ async function evaluate_application(application) {
 
 applicationFormElement.addEventListener('submit', async (event) => {
     event.preventDefault()
+
+    loadingSpinnerElement.style.display = 'inline-block'
+    resultTextElement.innerText = ''
+    
     const application = build_application()
     const evaluation = await evaluate_application(application)
+    
     const isApproved = evaluation >= 0.5
     const result = isApproved ? 'Approved' : 'Not Approved'
     resultTextElement.innerText = `${result} - ${(evaluation*100).toFixed(1)}%`
     resultTextElement.style.color = isApproved ? 'var(--clr-primary-400)' : 'var(--clr-accent-400)'
+    loadingSpinnerElement.style.display = 'none'
 })

@@ -60,17 +60,17 @@
                             <label for="self-employed_no">No</label>
                         </div>
                         <div>
-                            <label for="applicant-income">Applicant Annual Income (thousands of $)</label>
+                            <label for="applicant-income">Applicant Monthly Income ($)</label>
                             <input type="number" name="applicant-income" id="applicant-income" min="0" step="0.01"
                                 required>
                         </div>
                         <div>
-                            <label for="coapplicant-income">Coapplicant Annual Income (thousands of $)</label>
+                            <label for="coapplicant-income">Coapplicant Monthly Income ($)</label>
                             <input type="number" name="coapplicant-income" id="coapplicant-income" min="0" step="0.01"
                                 required>
                         </div>
                         <div>
-                            <label for="loan-amount">Loan Amount (thousands of $)</label>
+                            <label for="loan-amount">Loan Amount ($)</label>
                             <input type="number" name="loan-amount" id="loan-amount" step="0.01" required>
                         </div>
                         <div>
@@ -99,7 +99,8 @@
                 <div>
                     <p class="result | fs-secondary-heading fw-bold" style="color: var(--clr-accent-700);">
                         Result:
-                        <span class="result-text">Not Accepted</span>
+                        <span class="result-text"></span>
+                        <span class="loading-spinner"></span>
                     </p>
                 </div>
             </div>
